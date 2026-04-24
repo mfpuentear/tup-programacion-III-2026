@@ -1,0 +1,19 @@
+.caja {
+  background-color: red;
+  width: 300px;
+  height: 120px;
+  padding: 10px;
+  border-left: 5px solid black;
+  border-right: 5px solid green;
+  margin: 24px;
+}
+
+.caja2 {
+  background-color: blue;
+  width: 300px;
+  height: 120px;
+  padding: 10px;
+  border-left: 5px solid black;
+  border-right: 5px solid green;
+  margin: 40px;
+}
