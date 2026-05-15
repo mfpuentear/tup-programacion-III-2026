@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Variables</title>
+  </head>
+  <body>
+    <script>
+      // uso de var
+      if (true) {
+        var mensaje = "Hola";
+        console.log(mensaje);
+      }
+      console.log(mensaje);
+      var mensaje = "Chau";
+      console.log(mensaje);
+
+      // Uso de let
+      let aviso = "let fuera del bloque";
+      if (true) {
+        let aviso = "let dentro del bloque";
+        console.log(aviso);
+      }
+      console.log(aviso);
+      aviso = "Variable modificada";
+      console.log(aviso);
+
+      // Uso de const
+      const pi = 3.14159;
+      console.log(pi);
+    </script>
+  </body>
+</html>

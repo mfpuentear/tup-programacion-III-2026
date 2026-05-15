@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Funciones flecha</title>
+  </head>
+  <body>
+    <script>
+      tradicional();
+
+      const saludar = () => {
+        console.log("Hola");
+      };
+
+      saludar();
+
+      const cuadrado = (numero) => {
+        return numero * numero;
+      };
+
+      let resultado = cuadrado(3);
+      console.log(resultado);
+
+      const duplicar = (numero) => numero * 2;
+      /* identico a :
+      const duplicar = (numero) => {
+        return numero * 2;
+      };
+      */
+      resultado = duplicar(6);
+
+      function tradicional() {
+        console.log("hola mundo");
+      }
+    </script>
+  </body>
+</html>
