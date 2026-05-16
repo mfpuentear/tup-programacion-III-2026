@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplos reduce</title>
+  </head>
+  <body>
+    <script>
+      // Ejemplo 1
+      const numeros = [10, 20, 30];
+
+      const total = numeros.reduce((acumulador, numero) => {
+        return acumulador + numero;
+      }, 0);
+
+      console.log("Suma total:", total); // 60
+
+      // Ejemplo 2
+      const notas = [7, 4, 9, 5, 6];
+
+      /*
+      const cantidadAprobados = notas.reduce((acumulador, nota) => {
+        if (nota >= 6) {
+          return acumulador + 1;
+        }
+
+        return acumulador;
+      }, 0);
+      */
+
+      const cantidadAprobados = notas.reduce(
+        (contador, notas) => (notas >= 6 ? contador + 1 : contador),
+        0,
+      );
+
+      console.log("Aprobados:", cantidadAprobados); // 3
+
+      // Ejemplo 3
+      const productos = [
+        { nombre: "Teclado", precio: 50 },
+        { nombre: "Mouse", precio: 30 },
+        { nombre: "Monitor", precio: 20 },
+      ];
+
+      const precioTotal = productos.reduce(
+        (acumulador, producto) => acumulador + producto.precio,
+        0,
+      );
+
+      console.log("Precio total:", precioTotal); // 100
+    </script>
+  </body>
+</html>

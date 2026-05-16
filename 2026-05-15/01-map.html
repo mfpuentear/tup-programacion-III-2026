@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplos map</title>
+  </head>
+  <body>
+    <script>
+      // Ejemplo 1
+      const numeros = [1, 2, 3, 4];
+
+      const dobles = numeros.map((numero) => {
+        return numero * 2;
+      });
+
+      console.log(dobles);
+
+      // Ejemplo 2
+      const nombres = ["ana", "luis", "mora"];
+      const mayusculas = nombres.map((nombre) => nombre.toUpperCase());
+
+      console.log(nombres); // ["ana", "luis", "mora"]
+      console.log(mayusculas); // ["ANA", "LUIS", "MORA"]
+
+      // Ejemplo 3
+      const alumnos = [
+        { nombre: "Ana", nota: 8 },
+        { nombre: "Luis", nota: 6 },
+        { nombre: "Mora", nota: 10 },
+      ];
+
+      const nombresAlumnos = alumnos.map((alumno) => alumno.nombre);
+
+      console.log(nombresAlumnos); // ["Ana", "Luis", "Mora"]
+    </script>
+  </body>
+</html>

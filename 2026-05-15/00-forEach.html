@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplos forEach</title>
+  </head>
+  <body>
+    <script>
+      const nombres = ["Ana", "Luis", "Mora"];
+
+      // Uso de forEach
+      nombres.forEach((nombre) => {
+        console.log("Hola, " + nombre);
+      });
+
+      // Recorrido clasico
+      for (let i = 0; i < nombres.length; i++) {
+        console.log("Hola, " + nombres[i]);
+      }
+
+      // forEach con indice
+      nombres.forEach((nombre, indice) => {
+        //console.log("Hola, " + nombre + " (" + (indice + 1) + ")");
+        console.log(`Hola, ${nombre} (${indice + 1})`);
+      });
+    </script>
+  </body>
+</html>
