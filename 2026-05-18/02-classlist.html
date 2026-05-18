@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplos ClassList</title>
+    <style>
+      .azul {
+        color: blue;
+      }
+      .verde {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="mensaje" class="">Texto original</p>
+
+    <script>
+      const mensaje = document.getElementById("mensaje");
+
+      //mensaje.classList.remove("verde");
+      mensaje.classList.add("azul");
+      //mensaje.classList.toggle("azul");
+
+      console.log(mensaje.classList.contains("azul"));
+    </script>
+  </body>
+</html>

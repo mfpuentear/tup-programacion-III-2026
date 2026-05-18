@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplos ClassList</title>
+  </head>
+  <body>
+    <ul id="lista">
+      <li>Uno</li>
+    </ul>
+
+    <script>
+      const item = document.createElement("li");
+      item.textContent = "ítem";
+
+      const lista = document.getElementById("lista");
+      lista.appendChild(item);
+    </script>
+  </body>
+</html>

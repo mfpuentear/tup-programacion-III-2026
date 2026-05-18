@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplos eventos</title>
+  </head>
+  <body>
+    <input id="mensaje" value="Mensaje por defecto" />
+    <button id="boton">Saludo</button>
+
+    <script>
+      const boton = document.getElementById("boton");
+
+      boton.addEventListener("click", () => {
+        const mensaje = document.getElementById("mensaje");
+        console.log(mensaje.value);
+      });
+    </script>
+  </body>
+</html>

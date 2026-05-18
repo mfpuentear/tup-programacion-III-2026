@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplos getElementById, querySelectory y querySelectorAll</title>
+  </head>
+  <body>
+    <h1 id="titulo">Programación III</h1>
+    <p class="descripcion otra-clase">Introduccion al dom</p>
+    <ol>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ol>
+    <ul>
+      <li>Matematica</li>
+      <li>Fisica</li>
+      <li>Quimica</li>
+    </ul>
+
+    <script>
+      const titulo = document.getElementById("titulo");
+      console.log(titulo);
+
+      const descripcion = document.querySelector(".descripcion");
+      console.log(descripcion);
+
+      const items = document.querySelectorAll("li");
+      console.log(items);
+
+      items.forEach((item) => {
+        console.log(item.textContent);
+      });
+    </script>
+  </body>
+</html>

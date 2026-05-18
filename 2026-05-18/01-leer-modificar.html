@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplos getElementById, querySelectory y querySelectorAll</title>
+  </head>
+  <body>
+    <p id="mensaje">Texto original</p>
+    <p id="texto"></p>
+
+    <script>
+      const mensaje = document.getElementById("mensaje");
+      console.log(mensaje.textContent);
+      mensaje.textContent = "Texto actualizado";
+
+      const texto = document.getElementById("texto");
+      texto.innerHTML = "<strong>Un texto</strong>";
+      //texto.textContent = "<strong>Un texto</strong>";
+      console.log(texto.textContent);
+    </script>
+  </body>
+</html>
