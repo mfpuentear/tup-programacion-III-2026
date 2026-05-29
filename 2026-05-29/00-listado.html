@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplos listado</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Listado de animales</h1>
+      <ul id="lista"></ul>
+    </main>
+
+    <script>
+      const lista = document.getElementById("lista");
+      const listado = ["gato", "perro", "obeja", "elefante"];
+
+      // Cargar listado empleando forEach
+      /*
+      listado.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        lista.appendChild(li);
+      });
+      */
+
+      // Cargar listado empleando map
+      lista.innerHTML = listado.map((item) => `<li>${item}</li>`).join("");
+    </script>
+  </body>
+</html>

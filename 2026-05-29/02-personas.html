@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Personas</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Personas</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+          </tr>
+        </thead>
+        <tbody id="tabla"></tbody>
+      </table>
+    </main>
+
+    <script>
+      const personas = [
+        { id: 1, nombre: "Miguel", apellido: "Angel" },
+        { id: 2, nombre: "Ana", apellido: "Chacon" },
+        { id: 3, nombre: "Esteban", apellido: "Quito" },
+      ];
+
+      const tabla = document.getElementById("tabla");
+
+      personas.forEach((persona) => {
+        const fila = document.createElement("tr");
+
+        fila.addEventListener("click", () => {
+          fila.classList.toggle("seleccionado");
+        });
+
+        const id = document.createElement("td");
+        id.textContent = persona.id;
+        const nombre = document.createElement("td");
+        nombre.textContent = persona.nombre;
+        const apellido = document.createElement("td");
+        apellido.textContent = persona.apellido;
+
+        fila.append(id, nombre, apellido);
+        tabla.appendChild(fila);
+      });
+    </script>
+  </body>
+</html>
