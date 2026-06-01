@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculadora Pitágoras con formulario</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Calculadora Pitágoras</h1>
+      <form id="formulario">
+        <label for="adyacente">Adyacente</label>
+        <input id="adyacente" type="number" />
+        <label for="opuesto">Opuesto</label>
+        <input id="opuesto" type="number" />
+        <div>
+          <button type="submit">Calcular hipotenusa</button>
+        </div>
+      </form>
+      <p id="hipotenusa">Hipotenusa =</p>
+    </main>
+
+    <script>
+      const formulario = document.getElementById("formulario");
+
+      formulario.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const adyacente = document.getElementById("adyacente");
+        const opuesto = document.getElementById("opuesto");
+        const hipotenusa = document.getElementById("hipotenusa");
+
+        const valorAdyacente = parseFloat(adyacente.value);
+        const valorOpuesto = Number(opuesto.value);
+        const valorHipotenusa = Math.sqrt(
+          valorAdyacente ** 2 + valorOpuesto ** 2,
+        );
+
+        hipotenusa.textContent = `Hipotenusa = ${valorHipotenusa}`;
+      });
+    </script>
+  </body>
+</html>

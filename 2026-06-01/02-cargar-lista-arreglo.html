@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cargar lista en arreglo con formulario</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Listado</h1>
+      <form id="formulario">
+        <label for="nombreItem">Nombre del item</label>
+        <input id="nombreItem" />
+        <div>
+          <button type="submit">Agregar</button>
+        </div>
+      </form>
+
+      <ul id="listado"></ul>
+    </main>
+
+    <script>
+      const items = [];
+      const formulario = document.getElementById("formulario");
+      const nombreItem = document.getElementById("nombreItem");
+      const listado = document.getElementById("listado");
+
+      function renderItems() {
+        listado.innerHTML = "";
+
+        items.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item.nombre;
+          listado.appendChild(li);
+        });
+      }
+
+      formulario.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const nombre = nombreItem.value.trim();
+
+        if (nombre === "") {
+          nombreItem.focus();
+          return;
+        }
+
+        // items.push({ nombre : nombre });
+        items.push({ nombre });
+
+        // ordenar alfabeticamente el arreglo por nombre (string)
+        items.sort((a, b) => {
+          const nombreA = a.nombre.toUpperCase();
+          const nombreB = b.nombre.toUpperCase();
+          if (nombreA < nombreB) {
+            return -1;
+          }
+          if (nombreA > nombreB) {
+            return 1;
+          }
+
+          return 0;
+        });
+
+        renderItems();
+
+        formulario.reset();
+        nombreItem.focus();
+      });
+    </script>
+  </body>
+</html>

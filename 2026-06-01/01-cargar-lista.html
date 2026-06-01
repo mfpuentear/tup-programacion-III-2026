@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cargar lista con formulario</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Listado</h1>
+      <form id="formulario">
+        <label for="nombreItem">Nombre del item</label>
+        <input id="nombreItem" />
+        <div>
+          <button type="submit">Agregar</button>
+        </div>
+      </form>
+
+      <ul id="listado"></ul>
+    </main>
+
+    <script>
+      const formulario = document.getElementById("formulario");
+      const nombreItem = document.getElementById("nombreItem");
+      const listado = document.getElementById("listado");
+
+      formulario.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const valor = nombreItem.value.trim();
+
+        if (valor === "") {
+          nombreItem.focus();
+          return;
+        }
+
+        const li = document.createElement("li");
+        li.textContent = valor;
+
+        listado.appendChild(li);
+        formulario.reset();
+        nombreItem.focus();
+      });
+    </script>
+  </body>
+</html>
