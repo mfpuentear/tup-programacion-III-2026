@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: lightgrey;
+}
+
+main {
+  width: 80%;
+  max-width: 960px;
+  margin: 20px auto;
+  border: 2px solid lightslategray;
+  border-radius: 10px;
+  background-color: white;
+  padding: 20px;
+}
+
+h1 {
+  margin-top: 0px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input {
+  margin-top: 10px;
+}
+
+div button {
+  margin-top: 10px;
+}
+
+table {
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 5px;
+  border: 1px solid;
+  text-align: center;
+}
+
+.hijo {
+  width: 75px;
+  height: 75px;
+  border: 2px solid;
+  font-size: 30px;
+  text-align: center;
+}
+
+.hijo2 {
+  width: 75px;
+  height: 50px;
+  border: 2px solid;
+  font-size: 30px;
+  text-align: center;
+}
+
+.hijo3 {
+  width: 75px;
+  height: 90px;
+  border: 2px solid;
+  font-size: 30px;
+  text-align: center;
+}
+
+.contenedor-fila {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid;
+  padding: 10px;
+}
+
+.contenedor-fila-invertida {
+  display: flex;
+  flex-direction: row-reverse;
+  border: 2px solid;
+  padding: 10px;
+}
+
+.contenedor-columna {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid;
+  padding: 10px;
+  height: 300px;
+}
+
+.contenedor-columna-invertida {
+  display: flex;
+  flex-direction: column-reverse;
+  border: 2px solid;
+  padding: 10px;
+  height: 300px;
+}
+
+.contenedor {
+  display: flex;
+  padding: 10px;
+  border: 2px solid;
+  gap: 10px;
+  height: 120px;
+}
+
+.justificar-principio {
+  justify-content: flex-start;
+}
+
+.justificar-final {
+  justify-content: flex-end;
+}
+
+.justificar-centro {
+  justify-content: center;
+}
+
+.justificar-entre {
+  justify-content: space-between;
+}
+
+.justificar-alrededor {
+  justify-content: space-around;
+}
+
+.justificar-igualado {
+  justify-content: space-evenly;
+}
+
+.alinear-principio {
+  align-items: flex-start;
+}
+
+.alinear-final {
+  align-items: flex-end;
+}
+
+.alinear-centro {
+  align-items: center;
+}

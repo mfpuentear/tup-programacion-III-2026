@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Notas alumnos</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Notas alumnos</h1>
+      <form id="formulario">
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" />
+        <br />
+        <label for="nota">Nota:</label>
+        <input id="nota" type="number" />
+        <div>
+          <button type="submit">Cargar</button>
+        </div>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Nota</th>
+          </tr>
+        </thead>
+        <tbody id="tabla"></tbody>
+      </table>
+    </main>
+
+    <script>
+      const alumnos = [
+        { nombre: "Miguel", nota: 8 },
+        { nombre: "Ana", nota: 6 },
+      ];
+
+      const formulario = document.getElementById("formulario");
+      const inputNombre = document.getElementById("nombre");
+      const inputNota = document.getElementById("nota");
+      const tabla = document.getElementById("tabla");
+
+      function renderTabla() {
+        tabla.innerHTML = "";
+
+        alumnos.forEach(({ nombre, nota }) => {
+          const fila = document.createElement("tr");
+
+          const celdaNombre = document.createElement("td");
+          celdaNombre.textContent = nombre;
+          const celdaNota = document.createElement("td");
+          celdaNota.textContent = nota;
+
+          fila.append(celdaNombre, celdaNota);
+          tabla.appendChild(fila);
+        });
+      }
+
+      formulario.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        // Obtengo valores de formulario
+        const nombre = inputNombre.value.trim();
+        const nota = inputNota.value;
+
+        // Validacion: No permitir cargar nombres o notas vacias
+        if (nombre === "" || nota === "") {
+          return;
+        }
+
+        alumnos.push({ nombre, nota: Number(nota) });
+        renderTabla();
+        formulario.reset();
+        inputNombre.focus();
+      });
+
+      // Mostrar arreglo pre-cargado
+      renderTabla();
+    </script>
+  </body>
+</html>
