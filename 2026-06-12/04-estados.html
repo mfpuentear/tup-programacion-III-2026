@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React en HTML</title>
+
+    <!-- React + ReactDOM (versión desarrollo) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel para transpilar JSX en el navegador -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const { useState } = React;
+
+      function App() {
+        const [encendido, setEncendido] = useState(false);
+        const [contador, setContador] = useState(0);
+
+        return (
+          <div>
+            <h3>Encendido/apagado</h3>
+            <p>Estado: {encendido ? "ON" : "OFF"}</p>
+            <button onClick={() => setEncendido(!encendido)}>Cambiar</button>
+            <h3>Contador</h3>
+            <p>Contador: {contador}</p>
+            <p>Par o impar: {contador % 2 === 0 ? "Par" : "Impar"}</p>
+            <button onClick={() => setContador(contador + 1)}>Cambiar</button>
+          </div>
+        );
+      }
+
+      const container = document.getElementById("root");
+      const root = ReactDOM.createRoot(container);
+      root.render(<App />);
+    </script>
+  </body>
+</html>

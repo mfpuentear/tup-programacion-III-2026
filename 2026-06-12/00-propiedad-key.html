@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React en HTML</title>
+
+    <!-- React + ReactDOM (versión desarrollo) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel para transpilar JSX en el navegador -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function App() {
+        const materias = [
+          { id: "p1", nombre: "Programación I" },
+          { id: "p2", nombre: "Programación II" },
+          { id: "p3", nombre: "Programación III" },
+        ];
+
+        return (
+          <ul>
+            {materias.map((materia) => (
+              <li key={materia.id}>{materia.nombre}</li>
+            ))}
+          </ul>
+        );
+      }
+
+      const container = document.getElementById("root");
+      const root = ReactDOM.createRoot(container);
+      root.render(<App />);
+    </script>
+  </body>
+</html>

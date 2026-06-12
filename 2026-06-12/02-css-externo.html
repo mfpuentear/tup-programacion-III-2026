@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>React en HTML</title>
+
+    <!-- React + ReactDOM (versión desarrollo) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel para transpilar JSX en el navegador -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function Tarjeta({ nombre, rol }) {
+        return (
+          <div className="tarjeta">
+            <h4 className="tarjeta__nombre">{nombre}</h4>
+            <small className="tarjeta__rol">{rol}</small>
+          </div>
+        );
+      }
+
+      function App() {
+        return (
+          <div>
+            <Tarjeta nombre="Tarjeta 1" rol="Jefe" />
+            <Tarjeta nombre="Tarjeta 2" rol="Empleado" />
+          </div>
+        );
+      }
+
+      const container = document.getElementById("root");
+      const root = ReactDOM.createRoot(container);
+      root.render(<App />);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+.tarjeta {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: #f7f7f7;
+  transition: transform 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-2px);
+}
+
+.tarjeta__nombre {
+  margin: 0;
+}
+
+.tarjeta__rol {
+  color: #555;
+}

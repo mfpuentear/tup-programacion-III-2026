@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React en HTML</title>
+
+    <!-- React + ReactDOM (versión desarrollo) -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel para transpilar JSX en el navegador -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function App() {
+        function mostrarMensaje() {
+          window.alert("hola desde funcion");
+        }
+
+        function mostrarSaludo(saludo) {
+          window.alert(saludo);
+        }
+
+        return (
+          <div>
+            <button onClick={mostrarMensaje}>Mostrar mensaje</button>
+            <button onClick={() => mostrarSaludo("hola")}>Saludo</button>
+            <button onClick={() => mostrarSaludo("chau")}>Despedida</button>
+          </div>
+        );
+      }
+
+      const container = document.getElementById("root");
+      const root = ReactDOM.createRoot(container);
+      root.render(<App />);
+    </script>
+  </body>
+</html>
